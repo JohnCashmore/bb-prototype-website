@@ -13,6 +13,7 @@ var bb = bb ? bb : {};
 			// jQuery DOM caching
 			$detector: null,
 			// CSS selectors
+			detectorClass: 'monitor-mq',
 			detectorId: 'monitor_mq',
 			// Configuration
 			detectorWidth: 0,
@@ -25,7 +26,9 @@ var bb = bb ? bb : {};
 			 */
 			init: function() {
 				var self = this;
+
 				self.$detector = $('#' + self.detectorId);
+
 				self.monitor();
 			},
 			/**
@@ -35,13 +38,18 @@ var bb = bb ? bb : {};
 			 */
 			monitor: function() {
 				var self = this;
+
 				if (!self.$detector.length) {
 					self.$detector = $('<div />', {
-						id: self.detectorId
+						id: self.detectorId,
+						class: self.detectorClass
 					});
+
 					bb.settings.$body.append(self.$detector);
 				}
+
 				self.detectorWidth = self.$detector.width();
+
 				if (self.detectorWidth !== self.currentBreakpoint) {
 					self.previousBreakpoint = self.currentBreakpoint;
 					self.currentBreakpoint = self.detectorWidth;
