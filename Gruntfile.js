@@ -389,6 +389,15 @@ module.exports = function(grunt) {
 			}
 		},
 
+		csslint: {
+			strict: {
+				options: {
+					csslintrc: '.csslintrc'
+				},
+				src: '<%= config.dist %>/<%= config.distStyles %>/<%= config.mainCss %>'
+			}
+		},
+
 		// Misc tasks
 		modernizr: {
 			dist: {

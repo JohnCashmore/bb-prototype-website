@@ -1,0 +1,12 @@
+{
+	"adjoining-classes": false,
+	"box-model": false,
+	"box-sizing": false,
+	"compatible-vendor-prefixes": false,
+	"floats": false,
+	"font-sizes": false,
+	"known-properties": false,
+	"unique-headings": false,
+	"unqualified-attributes": false,
+	"regex-selectors": false
+}
